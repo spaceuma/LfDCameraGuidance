@@ -48,17 +48,17 @@ subplot(3,2,6); plot(vcamera_z,'g'); title('Camera vertical velocity')
 
 %% plot positions
 figure('color','w')
-subplot(3,3,1); plot(leftTool(:,1),'b'); title('Left Tool: x position')
-subplot(3,3,4); plot(rightTool(:,1),'r'); title('Right Tool: x position')
-subplot(3,3,7); plot(camera(:,1),'g'); title('Camera: x position')
+subplot(3,3,1); plot(t,leftTool(:,1),'b'); title('Left Tool: x position')
+subplot(3,3,4); plot(t,rightTool(:,1),'r'); title('Right Tool: x position')
+subplot(3,3,7); plot(t,camera(:,1),'g'); title('Camera: x position')
 
-subplot(3,3,2); plot(leftTool(:,2),'b'); title('Left Tool: y position')
-subplot(3,3,5); plot(rightTool(:,2),'r'); title('Right Tool: y position')
-subplot(3,3,8); plot(camera(:,2),'g'); title('Camera: y position')
+subplot(3,3,2); plot(t,leftTool(:,2),'b'); title('Left Tool: y position')
+subplot(3,3,5); plot(t,rightTool(:,2),'r'); title('Right Tool: y position')
+subplot(3,3,8); plot(t,camera(:,2),'g'); title('Camera: y position')
 
-subplot(3,3,3); plot(leftTool(:,3),'b'); title('Left Tool: z position')
-subplot(3,3,6); plot(rightTool(:,3),'r'); title('Right Tool: z position')
-subplot(3,3,9); plot(camera(:,3),'g'); title('Camera: z position')
+subplot(3,3,3); plot(t,leftTool(:,3),'b'); title('Left Tool: z position')
+subplot(3,3,6); plot(t,rightTool(:,3),'r'); title('Right Tool: z position')
+subplot(3,3,9); plot(t,camera(:,3),'g'); title('Camera: z position')
 
 %% plot section
 min = 11;
@@ -110,4 +110,10 @@ hold on; plot(camera(i:e,1), camera(i:e,2), 'g');
 % Y luego este comportamiento se modifica de acuerdo a un conjunto de "gestos"
 %       1) Zoom out: cuando las DOS herramientas se van hacia arriba. Si
 %       solo se va una no se hace el zoom out. Se ve muy bien al menos en
-%       los minutos 4 y 5.
+%       los minutos 2, 4, 5, 8. (plotear grafico entero pero solo de la z,
+%       arriba la x y la y, y abajo la z, o todo junto a ver como queda).
+%       2) Zoom in: se hace un zoom cuando las dos herramientas están muy
+%       juntas. Buscar como representar esto, quizas representando juntas
+%       la x y la y de ambas herramientas
+%       3) Seguimiento de las herramientas: ver si solo se sigue la
+%       herramienta en movimiento, o como se realiza el seguimiento. 
