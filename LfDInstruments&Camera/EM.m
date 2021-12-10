@@ -98,6 +98,7 @@ while 1
   F(find(F<realmin)) = realmin;
   loglik = mean(log(F));
   %Stop the process depending on the increase of the log likelihood 
+  abs((loglik/loglik_old)-1)
   if abs((loglik/loglik_old)-1) < loglik_threshold
     break;
   end

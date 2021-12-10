@@ -149,6 +149,7 @@ cameraPos = [cameraPos1;cameraPos2;cameraPos3;cameraPos4;cameraPos5;cameraPos6;c
 cameraPos16;cameraPos17;cameraPos18;cameraPos19;cameraPos20;cameraPos21;cameraPos22;...
  cameraPos23;cameraPos24;cameraPos25;cameraPos26]*1000;
 
+
 O = [784 102 -436];
 
 for i = 1:1:length(leftToolPos)

@@ -20,7 +20,9 @@ oldLogLikel =   -realmax ;  % Old log likelihood
 % for each HMM state.
 % bj(k) = P( v_k at t | q_t = s_j )
 [ priors, mius, covMatrices ]   =   trainingKmeans( Data', ( numGauss ) ) ;
-                            
+
+[Priors, mius, covMatrices, Pix] = EM(Data, priors', mius', covMatrices);
+
 % Organizing mius and covariance matrices for each HMM state
 % "numStates" matrices with "numGauss" gaussians of dimensionality "numVar"
 mius    =   reshape( mius', [ numVar 1 numGauss ] ) ;
